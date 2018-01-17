@@ -69,6 +69,9 @@ class FormInput extends React.Component {
 			</div>
 		)
 	}
+	setData(objs) {
+		this.setState(objs);
+	}
 	changeEvent(e) {
 		let value = e.target.value;
 		this.setState({
@@ -82,7 +85,7 @@ class FormInput extends React.Component {
 	clickEvent(e){
 		let onClick = this.state.onClick;
 		if(onClick){
-			onClick(e);
+			onClick(e, this.setData.bind(this));
 		}
 	}
 }

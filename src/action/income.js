@@ -1,8 +1,7 @@
 /**
- * home-set-pay action
- * @authors AndyPan (pye-mail@163.com)
- * @date    2018-01-15 14:54:37
+ * Created by zhouxs on 18/1/14.
  */
+
 import {createAction} from 'redux-actions';
 
 import utils from '../utils';

@@ -1,0 +1,195 @@
+@charset "UTF-8";
+/**
+ * 家园头部
+ * @authors AndyPan (pye-mail@163.com)
+ * @date    2018-01-16 17:48:42
+ */
+
+@import '../../less/_mixin.less';
+
+@basePath: '../../images/';
+
+
+.comp-home-header{
+
+	/**
+	 * 旋转动画(关键帧)
+	 * @remark 无
+	 */
+	.fn-rotate(){
+	    from { .rotate(0); }
+	    to { .rotate(360deg); }
+	}
+	.animation-frame-rotate(@name: animation-name) {
+	    @keyframes @name
+	    {
+	        .fn-rotate();
+	    }
+	    /* Firefox */
+	    @-moz-keyframes @name
+	    {
+	        .fn-rotate();
+	    }
+	    /* Safari 和 Chrome */
+	    @-webkit-keyframes @name
+	    {
+	        .fn-rotate();
+	    }
+	    /* Opera */
+	    @-o-keyframes @name
+	    {
+	        .fn-rotate();
+	    }
+	}
+	@animation-rotate-name: animation-rotate;
+	.animation-frame-rotate(@animation-rotate-name);
+	.audio-rotate{
+		animation-name: @animation-rotate-name;
+		animation-duration: 3s;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+	}
+	
+
+	.home-header-scene{
+		width: 100%;
+		height: 450px;
+		position: relative;
+		.thumb{
+			width: 100%;
+			height: 100%;
+		}
+		.icon-music{
+			display: inline-block;
+			width: 60px;
+			height: 60px;
+			text-decoration: none;
+			outline: none;
+			position: absolute;
+			top: 30px;
+			left: 30px;
+			background: url('@{basePath}icon-music.png') 0 0 no-repeat;
+			background-size: 100% 100%;
+			&.close{
+				background: url('@{basePath}icon-music-close.png') 0 0 no-repeat;
+				background-size: 100% 100%;
+			}
+		}
+		.handle-icon{
+			display: inline-block;
+			position: absolute;
+			top: 30px;
+			right: 30px;
+			width: 60px;
+			.scene-icon{
+				display: inline-block;
+				width: 60px;
+				height: 62px;
+				text-decoration: none;
+				outline: none;
+				&.icon-set{
+					background: url('@{basePath}icon-set.png') 0 0 no-repeat;
+					background-size: 100% 100%;
+					margin-bottom: 60px;
+				}
+				&.icon-income{
+					height: 64px;
+					background: url('@{basePath}icon-income.png') 0 0 no-repeat;
+					background-size: 100% 100%;
+					margin-bottom: 60px;
+				}
+				&.icon-position{
+					height: 72px;
+					background: url('@{basePath}icon-position.png') 0 0 no-repeat;
+					background-size: 100% 100%;
+				}
+			}
+		}
+	}
+	.home-info{
+		height: 230px;
+		width: 100%;
+		background: #565EB1;
+		position: relative;
+		@ml: 20px;
+		.info-title{
+			display: inline-block;
+			width: 450px;
+			margin-left: @ml;
+			margin-top: 25px;
+			text-align: left;
+			color: #FFF;
+			font-size: 38px;
+			.text-overflow();
+		}
+		.age{
+			position: absolute;
+			display: inline-block;
+			top: 28px;
+			right: 0;
+			width: 80px;
+			height: 40px;
+			line-height: 40px;
+			font-size: 22px;
+			color: #FFF;
+			text-align: center;
+			.border-left-radius(8px);
+			&.man{
+				background: url('@{basePath}man-bg.jpg') 0 0 no-repeat;
+				background-size: 100% 100%;
+			}
+			&.woman{
+				background: url('@{basePath}woman-bg.jpg') 0 0 no-repeat;
+				background-size: 100% 100%;
+			}
+		}
+		.date{
+			font-size: 24px;
+			color: #AAAED8;
+			display: inline-block;
+			width: 80%;
+			margin-left: @ml;
+			.birth, .death{
+				padding: 0 5px;
+				font-size: 24px;
+				margin-right: 8px;
+				color: #FFF;
+				background: #6CC15C;
+			}
+			.death{
+				background: #959DE9;
+			}
+		}
+		.info-detail{
+			height: 60px;
+			padding-left: @ml;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 120%;
+			.info-detail-item{
+				display: inline-block;
+				font-size: 22px;
+				color: #FFF;
+				margin-top: 10px;
+				margin-right: 40px;
+				height: 26px;
+				line-height: 26px;
+				padding-left: 32px;
+				position: relative;
+				.icon{
+					display: inline-block;
+					width: 26px;
+					height: 26px;
+					position: absolute;
+					top: 0;
+					left: 0;
+					&.burner{
+						background: url('@{basePath}burner.png') 0 0 no-repeat;
+						background-size: 100% 100%;
+					}
+				}
+			}
+		}
+	}
+}

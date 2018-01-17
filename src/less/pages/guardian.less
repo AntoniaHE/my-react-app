@@ -1,0 +1,101 @@
+@charset "UTF-8";
+/**
+ * 守护者 less
+ * @authors AndyPan (pye-mail@163.com)
+ * @date    2018-01-16 10:58:13
+ */
+@import '../_mixin.less';
+
+@basePath: '../../images/';
+
+.page-guardian{
+	.clearfix();
+	background: #f4f4f4;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+	overflow-y: auto;
+	padding-bottom: 120px;
+	z-index: 10;
+
+	&.music{
+		.guardian-item{
+			.guardian-info-wrap{
+				.name{top: 30px;}
+			}
+		}
+	}
+
+	.guardian-item{
+		display: block;
+		text-decoration: none;
+		outline: none;
+		height: 140px;
+		background: #FFF;
+		border-bottom: 1px solid #bbb;
+		position: relative;
+		.guardian-info-wrap{
+			display: inline-block;
+			position: absolute;
+			top: 20px;
+			left: 30px;
+			bottom: 20px;
+			right: 100px;
+			.thumb{
+				width: 100px;
+				height: 100px;
+				.border-radius(50px);
+				float: left;
+			}
+			.name{
+				display: inline-block;
+				position: absolute;
+				top: 10px;
+				left: 130px;
+				right: 0px;
+				text-align: left;
+				font-size: 30px;
+				color: #333;
+			}
+			.remark{
+				display: inline-block;
+				position: absolute;
+				bottom: 10px;
+				left: 130px;
+				right: 0px;
+				text-align: left;
+				font-size: 24px;
+				color: #999;
+			}
+		}
+	}
+
+	.bottom-handle{
+		height: 100px;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		.box-model();
+		.bottom-handle-item{
+			display: block;
+			box-flex: 1;
+		    -moz-box-flex: 1;
+			-webkit-box-flex: 1;
+			line-height: 100px;
+			text-align: center;
+			font-size: 36px;
+			color: #666;
+			text-decoration: none;
+			outline: none;
+			background: #e7e7e7;
+			&.sure{
+				background: #565eb1;
+				color: #FFF;
+			}
+		}
+	}
+}

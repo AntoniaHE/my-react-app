@@ -12,6 +12,8 @@ import Popup from '../components/_Commons/Popup';
 import SwitchButton from '../components/_Commons/SwitchButton';
 import RadioButton from '../components/_Commons/RadioButton';
 
+import HomeHeader from '../components/HomeHeader';
+
 import '../less/pages/homedetail.less';
 
 class HomeDetail extends Component {
@@ -38,50 +40,65 @@ class HomeDetail extends Component {
         let isFetching = this.props.isFetching;
 		return (
 			<div className="page-home-detail">
-                <a href="javascript:;" onClick={this.openPopupRemember.bind(this)}>记住</a> | 
-                {
-                    this.state.rememberPopupState ? (
-                    	<Popup show={true} className="remember-popup" type="downup" 
-                    		title="记住" 
-                    		tempView={RememberPopupTemp} 
-                    		onClosed={this.closePopupRemember.bind(this)} />
-                    ) : (null)
-                }
-                <a href="javascript:;" onClick={this.openPopupIncense.bind(this)}>上香</a> | 
-                {
-                    this.state.incensePopupState ? (
-                    	<Popup show={true} className="remember-popup" type="downup" 
-                    		title="上香" 
-                    		tempView={IncensePopupTemp}
-                    		onClosed={this.closePopupIncense.bind(this)} />
-                    ) : (null)
-                }
-                <a href="javascript:;" onClick={this.openPopupRelation.bind(this)}>修改关系</a>
-                {
-                    this.state.relationPopupState ? (
-                    	<Popup show={true} 
-                    		title="修改关系" 
-                    		tempView={UpdateRelationship}
-                    		onClosed={this.closePopupRelation.bind(this)}
-                    		buttons={({
-                    			cancel: {text: '取消', type: 'cancel', handle: this.updateBtnCancel.bind(this)},
-                    			sure: {text: '保存', type: 'sure', handle: this.updateBtnSave.bind(this)}
-                    		})}
-                    		/>
-                    ) : (null)
-                }
-                {
-                	this.state.tipPopupState ? (
-                		<Popup show={true} type="tip" timeout="3000" 
-                			text={this.state.tipPopupText} 
-                			onClosed={this.hideTip.bind(this)} />
-                	) : (null)
-                }
-                <SwitchButton checked={false} onSwitch={this.switchEvent.bind(this)} />
-                <RadioButton name="rad1" text="单选" />
-                <RadioButton name="rad1" text="单选" />
-                <RadioButton name="rad2" text="单选" />
-                <RadioButton name="rad2" text="单选" />
+				<HomeHeader />
+                <div className="fund-raising">
+                    <label className="fr-lab">最近来访</label>
+                    <a href="/visitdetail" className="more">查看更多></a>
+                </div>
+
+                <div className="history-wrap">
+                	<span className="dynamic-item">
+                        <label className="dynamic-lab dollar">美元</label>
+                        李强（儿子）送1000美元
+                        <label className="date">刚刚</label>
+                    </span>
+                    <span className="dynamic-item">
+                        <label className="dynamic-lab flower">鲜花</label>
+                        李莉（孙女）送鲜花一束
+                        <label className="date">3小时前</label>
+                    </span>
+                    <span className="dynamic-item">
+                        <label className="dynamic-lab yacht">游艇</label>
+                        李莉（孙女）送游艇
+                        <label className="date">7小时前</label>
+                    </span>
+                    <span className="dynamic-item">
+                        <label className="dynamic-lab gold">黄金</label>
+                        蔡杰（外孙女）送8888两黄金
+                        <label className="date">13个月前</label>
+                    </span>
+                </div>
+                
+                <div className="detail-footer">
+                    <a href="javascript:;" className="detail-footer-item" onClick={this.openPopupRemember.bind(this)}>
+                    	<i className="item-icon remember"></i>
+						<label className="item-lab">记住</label>
+                    </a>
+                    {
+	                    this.state.rememberPopupState ? (
+	                    	<Popup show={true} className="remember-popup" type="downup" 
+	                    		title="记住" 
+	                    		tempView={RememberPopupTemp} 
+	                    		onClosed={this.closePopupRemember.bind(this)} />
+	                    ) : (null)
+	                }
+                    <a href="javascript:;" className="detail-footer-item" onClick={this.openPopupIncense.bind(this)}>
+                    	<i className="item-icon incense"></i>
+						<label className="item-lab">上香</label>
+                    </a>
+                    {
+	                    this.state.incensePopupState ? (
+	                    	<Popup show={true} className="remember-popup" type="downup" 
+	                    		title="上香" 
+	                    		tempView={IncensePopupTemp}
+	                    		onClosed={this.closePopupIncense.bind(this)} />
+	                    ) : (null)
+	                }
+                    <a href="javascript:;" className="detail-footer-item" onClick={this.openPopupIncense.bind(this)}>
+                    	<i className="item-icon clifford"></i>
+						<label className="item-lab">祈福</label>
+                    </a>
+                </div>
 			</div>
 		);
 	}

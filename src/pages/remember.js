@@ -34,17 +34,17 @@ class RememberContent extends Component {
 		return (
 			<div className="page-remember">
                 <RememberSwiper data={this.state.bannerList} />
-                <a className="floor-btn-new" href="javascript:;"></a>
+                <a className="floor-btn-new" href="/homeset/add"></a>
                 <div className="remember-wrap">
-                    <div className="remember-nodata">
+                    <div className="remember-nodata hide">
                         <span className="nodata-logo"></span>
-                        <a href="javascript:;" className="remember-btn-new"></a>
+                        <a href="/homeset/add" className="remember-btn-new"></a>
                     </div>
-                    <div className="data-list hide">
+                    <div className="data-list">
                         <span className="remember-tip"></span>
                         <div className="data-list-wrap">
                             <div className="data-list-item">
-                                <div className="item-base-info">
+                                <a href="/homedetail" className="item-base-info">
                                     <img className="thumb" src="https://tuimeizi.cn/random?s=false&w=180&h=180" />
                                     <div className="info-text">
                                         <span className="name">
@@ -79,7 +79,7 @@ class RememberContent extends Component {
                                             农历2015年
                                         </span>
                                     </div>
-                                </div>
+                                </a>
                                 <div className="dynamic">
                                     <span className="dynamic-item">
                                         <label className="dynamic-lab dollar">美元</label>
@@ -99,7 +99,7 @@ class RememberContent extends Component {
                                 </div>
                             </div>
                             <div className="data-list-item">
-                                <div className="item-base-info">
+                                <a href="/homedetail" className="item-base-info">
                                     <img className="thumb" src="https://tuimeizi.cn/random?s=false&w=180&h=180" />
                                     <div className="info-text">
                                         <span className="name">
@@ -134,7 +134,7 @@ class RememberContent extends Component {
                                             农历2015年
                                         </span>
                                     </div>
-                                </div>
+                                </a>
                                 <div className="dynamic">
                                     <span className="dynamic-item">
                                         <label className="dynamic-lab dollar">美元</label>

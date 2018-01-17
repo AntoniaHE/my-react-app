@@ -1,0 +1,232 @@
+@charset "UTF-8";
+
+@import '../_mixin.less';
+
+.pay-page{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding-bottom: 120px;
+  background: #f4f4f4;
+  overflow: hidden;
+  overflow-y: auto;
+  .pay-header{
+    width: 100%;
+    height: 500px;
+    background-color: #fff;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .pay-footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: #FFF;
+    .footer-counter-wrap{
+      display: inline-block;
+      width: 180px;
+      height: 54px;
+      float: left;
+      margin-left: 36px;
+      margin-top: 22px;
+      position: relative;
+
+      .btn-jian, .btn-jia{
+        display: inline-block;
+        text-decoration: none;
+        outline: none;
+        width: 52px;
+        height: 54px;
+        float: left;
+        background: url('../../images/btn-jian.png') 0 0 no-repeat;
+        background-size: 100% 100%;
+      }
+      .btn-jia{
+        float: right;
+        background: url('../../images/btn-jia.png') 0 0 no-repeat;
+        background-size: 100% 100%;
+      }
+      .counter-wrap{
+        display: inline-block;
+        width: 50px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: -25px;
+        text-align: center;
+        line-height: 54px;
+        font-size: 24px;
+        color: #333;
+      }
+    }
+    .count-all{
+      display: inline-block;
+      width: 200px;
+      height: 54px;
+      line-height: 54px;
+      position: absolute;
+      top: 50%;
+      margin-top: -27px;
+      left: 250px;
+      .count-lab{
+        float: left;
+        font-size: 22px;
+      }
+      .count-price{
+        color: #FF1735;
+        font-size: 24px;
+        .price-int{
+          font-size: 34px;
+        }
+      }
+    }
+    .btn-incense{
+      display: inline-block;
+      text-decoration: none;
+      outline: none;
+      width: 180px;
+      height: 100px;
+      line-height: 100px;
+      float: right;
+      text-align: center;
+      background: #f62536;
+      font-size: 36px;
+      color: #FFF;
+    }
+  }
+  .pay-info{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 140px;
+    background-color: #565EB1;
+    position: relative;
+    .info-cont{
+
+      .cont-items{
+        padding: 10px 0;
+        line-height: 30px;
+        font-size: 30px;
+        color: #fff;
+        padding-left: 20px;
+        .icons{
+          display: inline-block;
+          margin-right: 20px;
+          width: 38px;
+          height: 38px;
+          vertical-align: middle;
+        }
+        .icon-relationship{
+          background: url('../../images/icon-relationship.png') no-repeat;
+          background-size: 100%;
+        }
+        .icon-title{
+          background: url('../../images/icon-title.png') no-repeat;
+          background-size: 100%;
+        }
+        p{
+          display: inline-block;
+          vertical-align: middle;
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+    .info-func{
+      width: 2px;
+      height: 40px;
+      border-right: 2px solid #ccc;
+      position: absolute;
+      top: 50%;
+      margin-top: -20px;
+      left: 65%;
+    }
+    .update-btn{
+      display: inline-block;
+      width: 130px;
+      height: 50px;
+      line-height: 50px;
+      border: 2px solid #FFF;
+      background: #565eb1;
+      .border-radius(25px);
+      text-decoration: none;
+      outline: none;
+      text-align: center;
+      font-size: 24px;
+      color: #FFF;
+      position: absolute;
+      right: 30px;
+      top: 50%;
+      margin-top: -25px;
+    }
+  }
+  .fund-raising{
+    height: 80px;
+    background: #FFF;
+    line-height: 80px;
+    border-bottom: 2px solid #ddd;
+    position: relative;
+    .fr-lab{
+      float: left;
+      margin-left: 30px;
+      font-size: 26px;
+      color: #999;
+    }
+    .fr-rmb{
+      color: #565eb1;
+      font-size: 40px;
+      float: right;
+      margin-right: 30px;
+      .rmb-mark{font-size: 24px;}
+    }
+  }
+  .pay-cont-txt{
+    .h-title{
+      height: 50px;
+      margin-top: 30px;
+      .title-wrap{
+        display: block;
+        margin: 0 auto;
+        height: 50px;
+        width: 250px;
+        line-height: 50px;
+        position: relative;
+        .bg{
+          display: inline-block;
+          width: 100%;
+          height: 20px;
+          background:  #F5E7D4;
+          .border-radius(10px);
+          position: absolute;
+          bottom: 0;
+          left: 0;
+        }
+        .txt{
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          color: #FCA839;
+          font-size: 28px;
+          text-align: center;
+          font-weight: bold;
+        }
+      }
+    }
+    .content{
+      margin: 5px 30px;
+      text-align: left;
+      line-height: 40px;
+      font-size: 24px;
+      color: #999;
+    }
+  }
+}

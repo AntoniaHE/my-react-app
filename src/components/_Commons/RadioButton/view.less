@@ -25,7 +25,7 @@
 		width: @size;
 		height: @size;
 		background: #FFF;
-		border: 2px solid #333;
+		border: 2px solid #9a9ca5;
 		.border-radius(20px);
 		float: left;
 	}
@@ -53,5 +53,20 @@
 		left: 0;
 		position: absolute;
 		z-index: -1;
+	}
+
+
+	&.full-radio{
+		position: absolute;
+		z-index: 10;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		.icon-radio{
+			float: right;
+			margin-top: 52px;
+			margin-right: 30px;
+		}
 	}
 }

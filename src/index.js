@@ -13,7 +13,11 @@ import My from './pages/my';
 import Login from './pages/login';
 import HomeDetail from './pages/home-detail';
 import HomeSet from './pages/home-set';
+import HomeSetPay from './pages/home-set-pay';
 import Test from './pages/test';
+import Income from './pages/income';
+import Pay from './pages/pay';
+import VisitDetail from './pages/visit-detail';
 
 import './index.less';
 
@@ -23,7 +27,7 @@ ReactDOM.render(
 	(<Provider store={store}>
 		<BrowserRouter forceRefresh={!supportsHistory}>
 			<div>
-		        <Redirect from="/" to="/login" />
+		        {/*<Redirect from="/" to="/login" />*/}
 		        <Route path="/test" component={Test} ></Route>
 		        <Route path="/login" component={Login} ></Route>
 		        <Route path="/remember" component={Remember} ></Route>
@@ -31,7 +35,11 @@ ReactDOM.render(
 		        <Route path="/heavenexpress" component={HeavenExpress} ></Route>
 		        <Route path="/my" component={My} ></Route>
 		        <Route path="/homedetail" component={HomeDetail}></Route>
-		        <Route path="/homeset" component={HomeSet}></Route>
+		        <Route path="/homeset/:status" component={HomeSet}></Route>
+		        <Route path="/homesetpay" component={HomeSetPay}></Route>
+				<Route path="/income" component={Income} ></Route>
+				<Route path="/pay" component={Pay} ></Route>
+				<Route path="/visitdetail" component={VisitDetail} ></Route>
 		        {/*<Route component={NoFound}/>*/}
 	        </div>
 	    </BrowserRouter>

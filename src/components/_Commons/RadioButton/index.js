@@ -57,6 +57,10 @@ class RadioButton extends React.Component {
 		NameGroup['renderState'] = NameGroup['renderState'] || {};
 		NameGroup['renderState'][name] = NameGroup['renderState'][name] || {};
 		NameGroup['renderState'][name][keys] = this.renderState.bind(this);
+		/*let _this = this;
+		setTimeout(()=>{
+			_this.onChecked();
+		}, 500);*/
 	}
 	renderState(checked) {
 		this.setState({checked: checked});
@@ -64,14 +68,22 @@ class RadioButton extends React.Component {
 	onChecked(e) {
 		let name = this.state.name;
 		let keys = this.state.keys;
+		let fun;
 		for(var key in NameGroup[name]){
 			NameGroup[name][key] = false;
-			NameGroup['renderState'][name][key](false);
+			fun = NameGroup['renderState'][name][key];
+			if(fun)
+				fun(false);
 		}
 		let thisChecked = !NameGroup[name][keys];
 		NameGroup[name][keys] = thisChecked;
 
 		NameGroup['renderState'][name][keys](thisChecked);
+
+		let checkedEvent = this.state.onChecked;
+		if(checkedEvent){
+			checkedEvent(e.target, {value: this.state.value});
+		}
 	}
 }
 

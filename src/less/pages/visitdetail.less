@@ -1,0 +1,38 @@
+
+.visit-detail {
+  .visit-detail-header {
+    position: fixed;
+    height: 90px;
+    line-height: 90px;
+    background-color: #565eb1;
+    display: flex;
+    font-size: 26px;
+    color: #AFB4DA;
+    width: 100%;
+    .header-item {
+      flex: 1;
+      text-align: center;
+      position: relative;
+      text-decoration: none;
+      color: #AFB4DA;
+    }
+    .active {
+      color: #fff;
+      &::after {
+        content: '';
+        height: 4px;
+        width: 40px;
+        margin: 0 auto;
+        background-color: #fff;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        margin-left: -20px;
+      }
+    }
+  }
+  .visit-list {
+    display: flex;
+    padding-top: 90px;
+  }
+}

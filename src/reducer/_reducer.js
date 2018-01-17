@@ -13,6 +13,9 @@ import { My } from './my';
 import { Login } from './login';
 import { HomeDetail } from './home-detail';
 import { HomeSet } from './home-set';
+import { HomeSetPay } from './home-set-pay';
+import { Income } from './income';
+import { VisitDetail } from './visit-detail';
 import { Test } from './test';
 
 export const rootReducer = combineReducers({
@@ -23,6 +26,9 @@ export const rootReducer = combineReducers({
 	Login,
 	HomeDetail,
 	HomeSet,
+	HomeSetPay,
+	Income,
+	VisitDetail,
 	Test
 });
 
